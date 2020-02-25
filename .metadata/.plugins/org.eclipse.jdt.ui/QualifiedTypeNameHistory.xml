@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.SectorDataFields"/>
+<fullyQualifiedTypeName name="com.example.demo.dao.StockPriceDetailsExcelRepository"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.StockPriceDetailsExcel"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.StockExchangeDataField"/>
+<fullyQualifiedTypeName name="com.example.demo.dao.StockExchangeDataFieldRepository"/>
+<fullyQualifiedTypeName name="com.example.demo.dao.IposRepository"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.IposPlanned"/>
+</qualifiedTypeNameHistroy>

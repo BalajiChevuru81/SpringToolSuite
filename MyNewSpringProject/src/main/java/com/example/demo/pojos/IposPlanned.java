@@ -1,12 +1,10 @@
 package com.example.demo.pojos;
 
-import javax.persistence.Column;
+
+
+//import java.util.Optional;
 
 import javax.persistence.Entity;
-
-import javax.persistence.GeneratedValue;
-
-import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
 
@@ -16,7 +14,6 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name="iposs")
-
 	public class IposPlanned {
 	
 	@Id
@@ -45,7 +42,7 @@ import javax.persistence.Table;
 	public String getCompanyName() {
 		return companyName;
 	}
-	public void setCompanyName(IposPlanned iposPlanned) {
+	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
 	public String getStockExchange() {
@@ -83,9 +80,5 @@ import javax.persistence.Table;
 		
 	}
 	
-
-	
-
-		
-	
+			
 }

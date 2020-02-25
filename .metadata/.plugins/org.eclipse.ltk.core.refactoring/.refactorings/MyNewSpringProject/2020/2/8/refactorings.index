@@ -1,0 +1,7 @@
+1582089724988	Rename package 'com.cts.project.pojos'
+1582089756507	Rename package 'com.cts.project.dao'
+1582110002048	Delete element
+1582176131353	Rename type 'IposInterface'
+1582176180145	Rename type 'SectorsDataFieldInterface'
+1582176204506	Rename type 'StockExchangeDataFieldInterface'
+1582176225846	Rename type 'StockPriceDetailsExcelInterface'

@@ -1,0 +1,60 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dao.SectorsDataFieldRepository;
+import com.example.demo.pojos.IposPlanned;
+import com.example.demo.pojos.SectorDataFields;
+
+
+@RestController
+
+public class SectorDataFieldsController {
+
+	@Autowired
+	 private SectorDataFields sectorDataFields;
+
+	 @RequestMapping("/getAllUsers")
+
+	 public Iterable<SectorDataFields> getAllUsers(){
+
+	 return sectorDataFields.findAll();
+
+	 }
+	 @PostMapping("/saveuser")
+
+	 public SectorDataFields sectorDataFields(@RequestBody SectorDataFields sectorDataFields)
+
+	 {
+
+	  System.out.println(sectorDataFields);
+
+	  sectorDataFields.save(sectorDataFields);
+
+	  return sectorDataFields;
+	  	 }
+	
+	 @PutMapping("/updateuser/{id}")
+
+	 public SectorDataFields updateUser(@RequestBody SectorDataFields sectorDataFields,@PathVariable("id") Integer id) {
+
+		 sectorDataFields.setId1(id);
+	  System.out.println(id);
+
+	  sectorDataFields.save(id);
+	 
+	  return sectorDataFields;
+	  	 }
+	
+}

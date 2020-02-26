@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
-//import java.util.Optional;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
+//import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,25 +17,24 @@ import com.example.demo.dao.CompanyRepository;
 import com.example.demo.pojos.Company;
 
 
-@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/getAllCompany")
+
 
 public class CompanyController {
 
 	@Autowired
 	 private CompanyRepository companyRepository;
 
-	 @RequestMapping("/getAllCompanies")
+	 @RequestMapping("/getAllUsers")
 
-	 public Iterable<Company> getAllCompanies(){
+	 public Iterable<Company> getAllUsers(){
 
 	 return companyRepository.findAll();
 
 	 }
-	 @PostMapping("/saveCompany")
+	 @PostMapping("/saveuser")
 
-	 public Company saveCompany(@RequestBody Company company)
+	 public Company saveUser(@RequestBody Company company)
 
 	 {
 
@@ -47,9 +45,9 @@ public class CompanyController {
 	  return company;
 	  	 }
 	 	 
-	 @PutMapping("/updateCompany/{companyName}")
+	 @PutMapping("/updateuser/{companyName}")
 
-	 public Company updateCompany(@RequestBody Company company,@PathVariable("companyName") String companyName) {
+	 public Company updateUser(@RequestBody Company company,@PathVariable("companyName") String companyName) {
 
 		 company.setCompanyName(companyName);
 	  System.out.println(company);
@@ -60,12 +58,12 @@ public class CompanyController {
 	  	 }
 	 
 	 
-	 @DeleteMapping ("/deleteIpos/{companyName}")
+/*	 @DeleteMapping("/deleteUser/{username}")
 	 
-		 public Boolean deleteUser(@PathVariable("companyName") String companyName) {
-			 System.out.println(companyName);
+		 public Boolean deleteUser(@PathVariable("companyName") String username) {
+			 System.out.println(username);
 			 companyRepository.deleteById(companyName);
 			 return true;
-		 }
+		 }*/
 	 	
 }

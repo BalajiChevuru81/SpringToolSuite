@@ -28,9 +28,9 @@ public class StockPriceDetailsExcelController {
 
 	private StockPriceDetailsExcelRepository stockPriceDetailsExcelRepository ;
 
-	 @RequestMapping("/getAllStockPriceDetailsExcel")
+	 @RequestMapping("/getAllUsers")
 
-	 public Iterable<StockPriceDetailsExcel> getAllStockPriceDetailsExcel(){
+	 public Iterable<StockPriceDetailsExcel> getAllUsers(){
 
 	 return stockPriceDetailsExcelRepository.findAll();
 

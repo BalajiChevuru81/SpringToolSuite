@@ -28,14 +28,14 @@ public class IposController {
 	 private IposRepository iposRepository;
 	 @RequestMapping
 
-	 public Iterable<IposPlanned> getAllIpos(){
+	 public Iterable<IposPlanned> getAllUsers(){
 
 	 return iposRepository.findAll();
 
 	 }
 	 @PostMapping("/saveIposPlanned")
 
-	 public IposPlanned saveIpos(@RequestBody IposPlanned iposplanned)
+	 public IposPlanned saveUser(@RequestBody IposPlanned iposplanned)
 
 	 {
 
@@ -46,9 +46,9 @@ public class IposController {
 	  return iposplanned;
 	  	 }
 	 	 
-	 @PutMapping("/updateIpos/{id1}")
+	 @PutMapping("/updateuser/{id1}")
 
-	 public IposPlanned updateIpos(@RequestBody IposPlanned iposplanned,@PathVariable("id1") Integer id1 ) {
+	 public IposPlanned updateUser(@RequestBody IposPlanned iposplanned,@PathVariable("id1") Integer id1 ) {
 
 		 iposplanned.setId1(id1);
 	  System.out.println(iposplanned);
@@ -61,7 +61,7 @@ public class IposController {
 	 
  @DeleteMapping("/deleteIposPlanned/{id1}")
 	 
-		 public Boolean deleteIposr(@PathVariable("id1") Integer id1) {
+		 public Boolean deleteUser(@PathVariable("id1") Integer id1) {
 			 System.out.println(id1);
 			 Optional<IposPlanned> iposplanned = iposRepository.findById(id1);
 			 iposRepository.delete(iposplanned.get());

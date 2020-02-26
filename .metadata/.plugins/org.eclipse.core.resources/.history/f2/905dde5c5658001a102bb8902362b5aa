@@ -29,9 +29,9 @@ public class StockExchangeDataFieldController {
 	
 	 private StockExchangeDataFieldRepository stockExchangeDataFieldRepository;
 
-	 @RequestMapping("/getAllStockExchangeDataField")
+	 @RequestMapping("/getAllUsers")
 
-	 public Iterable<StockExchangeDataField> getAllStockExchangeDataField(){
+	 public Iterable<StockExchangeDataField> getAllUsers(){
 
 	 return stockExchangeDataFieldRepository.findAll();
 
@@ -51,7 +51,7 @@ public class StockExchangeDataFieldController {
 	 	 
 	 @PutMapping("/updateStockExchangeDataField/{id3}")
 
-	 public StockExchangeDataField updateStockExchangeDataField(@RequestBody StockExchangeDataField stockExchangeDataField,@PathVariable("id3") Integer id3) {
+	 public StockExchangeDataField updateUser(@RequestBody StockExchangeDataField stockExchangeDataField,@PathVariable("id3") Integer id3) {
 
 		 stockExchangeDataField.setId(id3);
 	  System.out.println(id3);

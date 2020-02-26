@@ -8,8 +8,10 @@
 <fullyQualifiedTypeName name="com.example.demo.dao.StockPriceDetailsExcelRepository"/>
 <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.pojos.StockPriceDetailsExcel"/>
-<fullyQualifiedTypeName name="com.example.demo.pojos.StockExchangeDataField"/>
-<fullyQualifiedTypeName name="com.example.demo.dao.StockExchangeDataFieldRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.dao.IposRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.pojos.IposPlanned"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="com.example.demo.dao.StockExchangeDataFieldRepository"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.StockExchangeDataField"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

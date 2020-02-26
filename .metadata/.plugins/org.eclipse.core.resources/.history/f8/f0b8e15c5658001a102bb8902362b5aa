@@ -28,9 +28,9 @@ public class SectorDataFieldsController {
 	
 	 private SectorsDataFieldRepository sectorDataFieldRespository;
 
-	 @RequestMapping("/getAllStockDataField")
+	 @RequestMapping("/getAllUsers")
 
-	 public Iterable<SectorDataFields> getAllStockDataField(){
+	 public Iterable<SectorDataFields> getAllUsers(){
 
 	 return sectorDataFieldRespository.findAll();
 

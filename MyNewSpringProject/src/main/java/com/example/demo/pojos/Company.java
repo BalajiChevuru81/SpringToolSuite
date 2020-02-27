@@ -26,15 +26,14 @@ public class Company {
 	String boardOfDirectors;
 	String listInStockExchange;
 	String sector;
+	String aboutCompany;
+	String stockCode;
 	@Override
 	public String toString() {
 		return "Company [companyName=" + companyName + ", turnover=" + turnover + ", ceo=" + ceo + ", boardOfDirectors="
 				+ boardOfDirectors + ", listInStockExchange=" + listInStockExchange + ", sector=" + sector
 				+ ", aboutCompany=" + aboutCompany + ", stockCode=" + stockCode + "]";
 	}
-	String aboutCompany;
-	String stockCode;
-	
 	public String getCompanyName() {
 		return companyName;
 	}

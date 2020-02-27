@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
-//import java.util.Optional;
+import java.util.Optional;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.CompanyRepository;
 import com.example.demo.pojos.Company;
+
 
 
 @CrossOrigin(origins="http://localhost:4200")
@@ -60,12 +64,24 @@ public class CompanyController {
 	  	 }
 	 
 	 
-	 @DeleteMapping ("/deleteIpos/{companyName}")
+	 @DeleteMapping ("/deleteCompany/{companyName}")
 	 
-		 public Boolean deleteUser(@PathVariable("companyName") String companyName) {
+		 public Boolean deleteCompany(@PathVariable("companyName") String companyName) {
 			 System.out.println(companyName);
+			 Optional<Company> company = companyRepository.findById(companyName);
 			 companyRepository.deleteById(companyName);
 			 return true;
 		 }
-	 	
+	 @GetMapping("/findOneAll2/{companyName}")
+	 public Company findoneinall(@PathVariable("companyName") String companyName)
+
+		{
+
+			Optional<Company> company = companyRepository.findById(companyName);
+
+			return company.get();
+
+		}
+	 
+
 }

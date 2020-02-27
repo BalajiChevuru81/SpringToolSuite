@@ -25,12 +25,13 @@ public class StockExchangeDataField {
 	String stockExchange;
 	String breaf;
 	String address;
+	String remarks;
 	@Override
 	public String toString() {
 		return "StockExchangeDataField [id=" + id3 + ", stockExchange=" + stockExchange + ", breaf=" + breaf
 				+ ", address=" + address + ", remarks=" + remarks + "]";
 	}
-	String remarks;
+	
 	
 	public int getId() {
 		return id3;

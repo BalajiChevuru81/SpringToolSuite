@@ -6,5 +6,7 @@ import com.example.demo.pojos.User;
 
 	public interface UserRepository extends CrudRepository <User, String> {
 
+		User findByUsernameAndPassword(String username, String password);
+
 	}
 

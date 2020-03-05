@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
 	
-	import org.springframework.beans.factory.annotation.Autowired;
+	import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 	@RestController
+	@CrossOrigin(origins="http://localhost:4200")
 	@RequestMapping("/users")
 	public class UserController {
 		
@@ -61,5 +66,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 			 userRepository.deleteById(username);
 			 return true;
 		 }
+	 @GetMapping("/findOneInAll6/{username}")
+
+
+
+	 public User findoneinall(@PathVariable("username") String username)
+
+
+
+	 {
+
+
+
+	 Optional<User> user = userRepository.findById(username);
+
+
+
+	 return user.get();
+
+
+
+	 }
+
+
+	 @GetMapping("/findByUsernameAndPassword/{username}/{password}")
+
+
+
+	 public User findByUsernameAndPassword(@PathVariable("username") String username, @PathVariable("password") String password)
+
+
+
+	 {
+
+
+
+	 User user = userRepository.findByUsernameAndPassword(username,password);
+
+
+
+	 return user;
+
+
+
+	 }
+
+
 	 
 	 }

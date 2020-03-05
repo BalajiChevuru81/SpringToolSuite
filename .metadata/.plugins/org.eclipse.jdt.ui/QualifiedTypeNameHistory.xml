@@ -13,5 +13,9 @@
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
 <fullyQualifiedTypeName name="com.example.demo.dao.StockExchangeDataFieldRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.pojos.StockExchangeDataField"/>
+<fullyQualifiedTypeName name="com.example.demo.pojos.Company"/>
+<fullyQualifiedTypeName name="com.example.demo.dao.CompanyRepository"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional"/>
 <fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

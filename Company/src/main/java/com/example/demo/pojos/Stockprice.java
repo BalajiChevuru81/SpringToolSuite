@@ -1,3 +1,4 @@
+
 package com.example.demo.pojos;
 
 import java.sql.Time;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Table(name = "stockprice")
 
-public class StockPrice {
+public class Stockprice {
 
 
 	private String companyname;

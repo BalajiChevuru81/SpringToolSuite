@@ -4,6 +4,14 @@ package com.example.demo.controllers;
 
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import org.springframework.cloud.openfeign.FeignClient;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,8 +21,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.example.demo.JSONCompanyClient;
 import com.example.demo.dao.CompanyRepository;
 import com.example.demo.pojos.Company;
 
@@ -27,7 +38,8 @@ public class CompanyController {
 	
 	@Autowired
 	private CompanyRepository companyRepository;
-	
+	@Autowired
+	JSONCompanyClient jcompany;
 	@RequestMapping("/getAllCompanies")
 	public Iterable<Company> getAllCompanies(){
 		return companyRepository.findAll();
@@ -39,6 +51,7 @@ public class CompanyController {
 		companyRepository.save(company);
 		return company;
 	}
+	 
 	
 	@PutMapping("/updateCompany/{companyname}")
 	public Company updateCompany(@RequestBody Company company,@PathVariable("companyname") String companyname) {
@@ -56,10 +69,12 @@ public class CompanyController {
 	}
 
 	@GetMapping("/findOneInAll1/{companyname}")
-	public Company findoneinall(@PathVariable("companyname") String companyname) {
-		Optional<Company> company = companyRepository.findById(companyname);
-		System.out.println("find one in all "+company.get());
-		return company.get();
-	}
+
+	 public Company findoneinall(@PathVariable("companyname") String companyname) {
+	 Optional<Company> company = companyRepository.findById(companyname);
+	 Company comp=company.get();
+	 comp.setStockPriceList(jcompany.findByCompanyname(companyname));
+	 return company.get();
+	 }
 	
 }

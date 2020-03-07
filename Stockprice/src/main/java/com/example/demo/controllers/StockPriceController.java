@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,25 +38,33 @@ public class StockPriceController {
 		return stockprice;
 	}
 	
-	@PutMapping("/updateStockPrice/{companyname}")
-	public StockPrice updateStockPrice(@RequestBody StockPrice stockprice,@PathVariable("companyname") String companyname) {
-		stockprice.setCompanyname(companyname);
+	@PutMapping("/updateStockPrice/{stockexchange}")
+	public StockPrice updateStockPrice(@RequestBody StockPrice stockprice,@PathVariable("stockexchange") String stockexchange) {
+		stockprice.setStockexchange(stockexchange);
 		System.out.println(stockprice);
 		
 		stockpriceRepository.save(stockprice);
 		return stockprice;
 	}
-	@DeleteMapping("/deleteStockPrice/{companyname}")
-	public Boolean deleteStockPrice(@PathVariable("companyname") String companyname) {
-		System.out.println(companyname);
-		stockpriceRepository.deleteById(companyname);
+	@DeleteMapping("/deleteStockPrice/{stockexchange}")
+	public Boolean deleteStockPrice(@PathVariable("stockexchange") String stockexchange) {
+		System.out.println(stockexchange);
+		stockpriceRepository.deleteById(stockexchange);
 		return true;
 	}
 
-	@GetMapping("/findOneInAll5/{companyname}")
-	public StockPrice findoneinall(@PathVariable("companyname") String companyname) {
-		Optional<StockPrice> stockprice = stockpriceRepository.findById(companyname);
+	@GetMapping("/findOneInAll5/{stockexchange}")
+	public StockPrice findoneinall(@PathVariable("stockexchange") String stockexchange) {
+		Optional<StockPrice> stockprice = stockpriceRepository.findById(stockexchange);
 		return stockprice.get();
 	}
+	@GetMapping("/findByCompanyname/{companyname}")
+
+	 public List<StockPrice> findBycompanyname(@PathVariable("companyname") String companyname)
+	 {
+	 List<StockPrice> stockprice = stockpriceRepository.findByCompanyname(companyname);
+	 return stockprice;
+
+	 }
 	
 }

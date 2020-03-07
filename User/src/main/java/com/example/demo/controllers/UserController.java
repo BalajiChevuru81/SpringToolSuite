@@ -1,7 +1,12 @@
 package com.example.demo.controllers;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.dao.UserRepository;
 import com.example.demo.pojos.User;
@@ -60,7 +67,21 @@ public class UserController {
 	 return user;
 
 	 }
-	
+	 @PostMapping("/uploadImage")
+	  public int handleFileUpload(@RequestParam("file") MultipartFile file, HttpSession session) {
+	 Path rootLocation = Paths.get(session.getServletContext().getRealPath("/resources/images"));
+	  System.out.println("rootLocation == " + rootLocation);
+	  String nameExtension[] = file.getContentType().split("/");
+	  String profileImage = System.currentTimeMillis() + "." + nameExtension[1];
+	  try
+	   {
+	   System.out.println("ProfileImage :: " + profileImage);
+	   }
+	  catch(Exception exception)
+	   {
+	   }
+	 return 1;
+	  }
 	@PutMapping("/updateUser/{username}")
 	public User updateUser(@RequestBody User user,@PathVariable("username") String username) {
 		user.setUsername(username);

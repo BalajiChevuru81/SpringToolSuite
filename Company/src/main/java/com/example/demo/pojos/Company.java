@@ -1,10 +1,13 @@
 package com.example.demo.pojos;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 @Entity
 @Table(name="company")
 public class Company {
@@ -20,8 +23,15 @@ public class Company {
 	  private String sector;
 	  private String remarks;
 	  private int stockcode;
-	  
-	  @Override
+	  @Transient
+	  List<Stockprice> StockPriceList;
+	  public List<Stockprice> getStockPriceList() {
+		return StockPriceList;
+	}
+	public void setStockPriceList(List<Stockprice> stockPriceList) {
+		StockPriceList = stockPriceList;
+	}
+	@Override
 		public String toString() {
 			return "Companies [companyname=" + companyname + ", turnover=" + turnover + ", ceoname=" + ceoname + ", bod="
 					+ bod + ", listedinse=" + listedinse + ", sector=" + sector + ", remarks=" + remarks + ", stockcode="

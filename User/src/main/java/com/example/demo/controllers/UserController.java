@@ -67,15 +67,15 @@ public class UserController {
 	 return user;
 
 	 }
-	 @PostMapping("/uploadImage")
-	  public int handleFileUpload(@RequestParam("file") MultipartFile file, HttpSession session) {
+	 @PostMapping("/uploadImage/{username}")
+	  public int handleFileUpload(@PathVariable("username") @RequestParam("file") MultipartFile file, HttpSession session) {
 	 Path rootLocation = Paths.get(session.getServletContext().getRealPath("/resources/images"));
 	  System.out.println("rootLocation == " + rootLocation);
 	  String nameExtension[] = file.getContentType().split("/");
-	  String profileImage = System.currentTimeMillis() + "." + nameExtension[1];
+	  String profileimage = System.currentTimeMillis() + "." + nameExtension[1];
 	  try
 	   {
-	   System.out.println("ProfileImage :: " + profileImage);
+	   System.out.println("ProfileImage :: " + profileimage);
 	   }
 	  catch(Exception exception)
 	   {

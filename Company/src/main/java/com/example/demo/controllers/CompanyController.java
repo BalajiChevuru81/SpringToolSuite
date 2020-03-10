@@ -31,7 +31,7 @@ import com.example.demo.pojos.Company;
 
 
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/Company")
 public class CompanyController {

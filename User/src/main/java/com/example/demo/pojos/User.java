@@ -13,7 +13,7 @@ import javax.persistence.Column;
 	  @Column(name="password",nullable=false,length=100)
 	  private String password;
 	  private String confirm;
-	  private int phone;
+	  private long phone;
 	  private String email;
 	  private String usertype;
 	  public String getProfileimage() {
@@ -37,7 +37,7 @@ import javax.persistence.Column;
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-	public int getPhone() {
+	public long getPhone() {
 		return phone;
 	}
 	public String getConfirm() {

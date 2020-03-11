@@ -38,8 +38,8 @@ public class StockPrice {
 		this.stockexchange = stockexchange;
 	}
 	private String currentprice;
-	private String date;
-	private String time;
+	private Date date;
+	private Time time;
 	
 
 	public String getCompanyname() {
@@ -68,25 +68,25 @@ public class StockPrice {
 
 	}
 
-	public String getDate() {
+	public Date getDate() {
 
 		return date;
 
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 
 		this.date = date;
 
 	}
 
-	public String getTime() {
+	public Time getTime() {
 
 		return time;
 
 	}
 
-	public void setTime(String time) {
+	public void setTime(Time time) {
 
 		this.time = time;
 

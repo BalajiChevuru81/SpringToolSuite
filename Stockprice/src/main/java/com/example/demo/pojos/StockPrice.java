@@ -18,6 +18,10 @@ public class StockPrice {
 
 
 	private String companyname;
+	private String stockexchange;
+	private String currentprice;
+	private String date;
+	private String time;
 	
 	@Override
 
@@ -29,7 +33,7 @@ public class StockPrice {
 
 	}
 	@Id
-	private String stockexchange;
+	
 	public String getStockexchange() {
 		return stockexchange;
 	}
@@ -37,9 +41,7 @@ public class StockPrice {
 	public void setStockexchange(String stockexchange) {
 		this.stockexchange = stockexchange;
 	}
-	private String currentprice;
-	private Date date;
-	private Time time;
+	
 	
 
 	public String getCompanyname() {
@@ -68,25 +70,25 @@ public class StockPrice {
 
 	}
 
-	public Date getDate() {
+	public String getDate() {
 
 		return date;
 
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 
 		this.date = date;
 
 	}
 
-	public Time getTime() {
+	public String getTime() {
 
 		return time;
 
 	}
 
-	public void setTime(Time time) {
+	public void setTime(String time) {
 
 		this.time = time;
 

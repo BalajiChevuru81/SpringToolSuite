@@ -19,18 +19,21 @@ public class StockPrice {
 
 	private String companyname;
 	private String stockexchange;
-	private String currentprice;
+	private int currentprice;
 	private String date;
 	private String time;
+	private String uplodefile; 
 	
+	public String getUplodefile() {
+		return uplodefile;
+	}
+	public void setUplodefile(String uplodefile) {
+		this.uplodefile = uplodefile;
+	}
 	@Override
-
 	public String toString() {
-
 		return "StockPrice [companyname=" + companyname + ", stockexchange=" + stockexchange + ", currentprice="
-
-				+ currentprice + ", date=" + date + ", time=" + time + "]";
-
+				+ currentprice + ", date=" + date + ", time=" + time + ", uplodefile=" + uplodefile + "]";
 	}
 	@Id
 	
@@ -58,13 +61,13 @@ public class StockPrice {
 
 	
 
-	public String getCurrentprice() {
+	public int getCurrentprice() {
 
 		return currentprice;
 
 	}
 
-	public void setCurrentprice(String currentprice) {
+	public void setCurrentprice(int currentprice) {
 
 		this.currentprice = currentprice;
 
